@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.jamesbaca.ascent</groupId>
+  <artifactId>ascent</artifactId>
+  <version>0.1.0</version>  
+  <packaging>jar</packaging>
+  <name>ascent</name>
+  <description>Set typeface on Android TextView objects</description>
+  <url>https://github.com/desertjim/ascent</url>
+  <licenses>
+    <license>
+      <name>The Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>James Baca</name>
+      <email>sirmrjim@gmail.com</email>
+      <organization>Crown Digital LLC</organization>
+      <organizationUrl>http://www.jamesbaca.net</organizationUrl>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git@github.com:desertjim/ascent.git</connection>
+    <developerConnection>scm:git:git@github.com:desertjim/ascent.git</developerConnection>
+    <url>git@github.com:desertjim/ascent.git</url>
+  </scm>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.android</groupId>
+      <artifactId>android</artifactId>
+      <version>4.1.1.4</version>
+    </dependency>
+  </dependencies>
+
+</project>
+
