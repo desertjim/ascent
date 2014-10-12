@@ -50,6 +50,7 @@ public class AscentTest {
         JavaFileObject source = JavaFileObjects.forSourceString("test.Test", Joiner.on('\n').join(
                 "package test;",
                 "import net.jamesbaca.ascent.Typeface;",
+                "import net.jamesbaca.ascent.internal.AnnotationsConverter;",
                 "import android.widget.TextView;",
                 "",
                 "public class Test {",
