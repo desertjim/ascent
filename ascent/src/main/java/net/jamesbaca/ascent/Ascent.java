@@ -54,6 +54,9 @@ public class Ascent {
     @SuppressWarnings("unchecked")
     protected TypefaceHelper getHelperForClass(Class<?> cls) throws NoSuchMethodException {
 
+        if(cls == null){
+            return null;
+        }
         String clsName = cls.getName();
         TypefaceHelper typefaceHelper = null;
 

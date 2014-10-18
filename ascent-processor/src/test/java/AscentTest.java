@@ -1,6 +1,9 @@
+import android.view.View;
+
 import com.google.common.base.Joiner;
 import com.google.testing.compile.JavaFileObjects;
 
+import net.jamesbaca.ascent.Ascent;
 import net.jamesbaca.ascent.internal.TypefaceProcessor;
 
 import org.junit.Test;
@@ -46,7 +49,6 @@ public class AscentTest {
     }
 
     @Test public void shouldSubclass() {
-        //JavaFileObjects.forSourceString()
         JavaFileObject source = JavaFileObjects.forSourceString("test.Test", Joiner.on('\n').join(
                 "package test;",
                 "import net.jamesbaca.ascent.Typeface;",
@@ -66,7 +68,18 @@ public class AscentTest {
                 .processedWith(typefaceProcessors()).compilesWithoutError();
     }
 
+    /**
+     * Test to make sure that if you inject into a class that it doesn't blow up
+     */
+    @Test public void canInjectEmptyClasses(){
+        AscentTest classToTest = new AscentTest();
+        Ascent ascent = new Ascent();
+        assert(classToTest != null);
+        ascent.inject(classToTest);
+    }
+
     private Iterable<? extends Processor> typefaceProcessors() {
         return Arrays.asList(new TypefaceProcessor());
     }
+
 }
