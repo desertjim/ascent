@@ -2,7 +2,14 @@ Ascent
 ============
 
 Ascent is an Android library that simplifies applying custom fonts to TextViews and subclasses.
-Annotation processing is used to remove broilerplate from your code.  See blow
+Annotation processing is used to remove broilerplate from your code.  See examples.
+
+Build Status
+------------
+[![Build Status](https://travis-ci.org/desertjim/ascent.svg?branch=master)](https://travis-ci.org/desertjim/ascent)
+
+Examples
+--------
 
 ```java
 
@@ -58,7 +65,7 @@ class CustomView extends View {
 ```
 
 Comments
------------
+--------
 This library is focused strictly on simplifying the setting of fonts, without having to subclass text views.  This library becomes much more useful when coupled with dagger, and it's less sharp brother butter knife. 
 
 
