@@ -10,6 +10,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * Created by jamesbaca on 9/27/14.
  */
 @Retention(RUNTIME) @Target(FIELD)
-public @interface Typeface {
+public @interface Font {
     String value();
 }

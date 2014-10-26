@@ -40,9 +40,9 @@ public class Ascent {
 
     public void inject(Object target){
         try {
-            TypefaceHelper helper = getHelperForClass(target.getClass());
+            FontHelper helper = getHelperForClass(target.getClass());
             if (helper != null) {
-                helper.applyTypeface(target, this);
+                helper.applyFont(target, this);
             }
         } catch (RuntimeException e) {
             throw e;
@@ -52,26 +52,26 @@ public class Ascent {
     }
 
     @SuppressWarnings("unchecked")
-    protected TypefaceHelper getHelperForClass(Class<?> cls) throws NoSuchMethodException {
+    protected FontHelper getHelperForClass(Class<?> cls) throws NoSuchMethodException {
 
         if(cls == null){
             return null;
         }
         String clsName = cls.getName();
-        TypefaceHelper typefaceHelper = null;
+        FontHelper fontHelper = null;
 
         try {
             String generatedClassName = clsName + InjectedAscent.SUFFIX;
-            typefaceHelper = (TypefaceHelper) Class.forName(generatedClassName).newInstance();
+            fontHelper = (FontHelper) Class.forName(generatedClassName).newInstance();
         } catch (ClassNotFoundException e) {
-            typefaceHelper = getHelperForClass(cls.getSuperclass());
+            fontHelper = getHelperForClass(cls.getSuperclass());
         } catch (InstantiationException e) {
             return null;
         } catch (IllegalAccessException e) {
             return null;
         }
 
-        return typefaceHelper;
+        return fontHelper;
     }
     
     public class UnableToInjectException extends RuntimeException{

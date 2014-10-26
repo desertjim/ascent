@@ -7,12 +7,12 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import net.jamesbaca.ascent.Ascent;
-import net.jamesbaca.ascent.Typeface;
+import net.jamesbaca.ascent.Font;
 
 
 public class MainActivity extends ActionBarActivity {
 
-    @Typeface("Lobster.ttf") TextView mHelloWorld;
+    @Font("Lobster.ttf") TextView mHelloWorld;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

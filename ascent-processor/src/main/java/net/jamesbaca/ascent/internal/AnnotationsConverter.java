@@ -4,12 +4,11 @@ import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import com.google.common.collect.FluentIterable;
 
+import net.jamesbaca.ascent.Font;
 import net.jamesbaca.ascent.InjectedAscent;
-import net.jamesbaca.ascent.Typeface;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -85,7 +84,7 @@ public class AnnotationsConverter {
         @Override public AnnotatedField apply(Element fieldElement) {
             String name = fieldElement.getSimpleName().toString();
             TypeElement enclosingClass = (TypeElement) fieldElement.getEnclosingElement();
-            String referencedTypeFaceString = (String)fieldElement.getAnnotation(Typeface.class).value();
+            String referencedTypeFaceString = (String)fieldElement.getAnnotation(Font.class).value();
 
             return new AnnotatedField(name, referencedTypeFaceString, enclosingClass);
         }

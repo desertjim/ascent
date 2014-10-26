@@ -20,10 +20,10 @@ class WriterFactory {
     this.suffix = suffix;
   }
 
-  public TypefaceClassWriter writeClass(EnclosingClass enclosingClass) throws IOException {
+  public FontClassWriter writeClass(EnclosingClass enclosingClass) throws IOException {
     TypeElement classType = enclosingClass.getElement();
     String fqcn = enclosingClass.getClassPackage() + "." + enclosingClass.getClassName() + suffix;
     JavaFileObject jfo = filer.createSourceFile(fqcn, classType);
-    return new TypefaceClassWriter(jfo, suffix, enclosingClass);
+    return new FontClassWriter(jfo, suffix, enclosingClass);
   }
 }

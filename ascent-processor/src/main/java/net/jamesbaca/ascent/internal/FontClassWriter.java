@@ -8,13 +8,13 @@ import java.util.Collection;
 
 import javax.tools.JavaFileObject;
 
-public class TypefaceClassWriter {
+public class FontClassWriter {
 
     private final JavaFileObject javaFileObject;
     private final String suffix;
     private final EnclosingClass enclosingClass;
 
-    public TypefaceClassWriter(JavaFileObject jfo, String suffix, EnclosingClass enclosingClass) {
+    public FontClassWriter(JavaFileObject jfo, String suffix, EnclosingClass enclosingClass) {
         this.javaFileObject = jfo;
         this.suffix = suffix;
         this.enclosingClass = enclosingClass;
@@ -35,20 +35,20 @@ public class TypefaceClassWriter {
         String enclosingClassName = enclosingClass.getEnclosingClassName();
         String enclosingClassPackage = enclosingClass.getEnclosingClassPackage();
 
-        String helperType = "TypefaceHelper";
+        String helperType = "FontHelper";
         return Joiner.on("\n").join(
                     "// Generated code from Typeface. Do not modify!",
                     "package " + classPackage + ";",
                     "",
                     "import android.widget.TextView;",
-                    "import net.jamesbaca.ascent.TypefaceHelper;",
+                    "import net.jamesbaca.ascent.FontHelper;",
                     "import net.jamesbaca.ascent.Ascent;",
                     "import " + classPackage + "."+ className + ";",
                     emitParentImport(enclosingClassPackage, enclosingClassName),
                     "",
                     "public class " + helperClassName + " implements " + helperType + " {",
                     "",
-                    "  public void applyTypeface(Object target, Ascent manager) {",
+                    "  public void applyFont(Object target, Ascent manager) {",
                     "",
                     emitParentApplyTypeface(enclosingClassName),
                     emitFields(className, annotatedFields),
@@ -71,7 +71,7 @@ public class TypefaceClassWriter {
         StringBuilder lBuilder = new StringBuilder();
         if(className != null){
             lBuilder.append("    "+className+suffix+ " superClass = new " + className+suffix + "();\n");
-            lBuilder.append("    superClass.applyTypeface(target, manager);\n");
+            lBuilder.append("    superClass.applyFont(target, manager);\n");
             return lBuilder.toString();
         }else{
             return "";

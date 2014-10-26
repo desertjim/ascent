@@ -7,10 +7,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import net.jamesbaca.ascent.Ascent;
-import net.jamesbaca.ascent.Typeface;
-
-import java.util.Arrays;
-import java.util.List;
+import net.jamesbaca.ascent.Font;
 
 import javax.inject.Inject;
 
@@ -21,11 +18,11 @@ import dagger.ObjectGraph;
 
 public class MainActivity extends ActionBarActivity {
 
-    @InjectView(R.id.title) @Typeface("Lobster.ttf") TextView mTitle;
-    @InjectView(R.id.option1) @Typeface("Lobster.ttf") TextView mOption1;
-    @InjectView(R.id.option2) @Typeface("Playball-Regular.ttf") TextView mOption2;
-    @InjectView(R.id.option3) @Typeface("Lobster.ttf") TextView mOption3;
-    @InjectView(R.id.button) @Typeface("Playball-Regular.ttf") TextView mTextView;
+    @InjectView(R.id.title) @Font("Lobster.ttf") TextView mTitle;
+    @InjectView(R.id.option1) @Font("Lobster.ttf") TextView mOption1;
+    @InjectView(R.id.option2) @Font("Playball-Regular.ttf") TextView mOption2;
+    @InjectView(R.id.option3) @Font("Lobster.ttf") TextView mOption3;
+    @InjectView(R.id.button) @Font("Playball-Regular.ttf") TextView mTextView;
     @Inject Ascent mAscent;
     private ObjectGraph mAppGraph;
 

@@ -3,8 +3,8 @@ package net.jamesbaca.ascent.internal;
 import com.google.auto.service.AutoService;
 import com.google.common.collect.Sets;
 
+import net.jamesbaca.ascent.Font;
 import net.jamesbaca.ascent.InjectedAscent;
-import net.jamesbaca.ascent.Typeface;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -27,7 +27,7 @@ import javax.tools.Diagnostic;
  * Created by jamesbaca on 9/27/14.
  */
 @AutoService(Processor.class)
-public final class TypefaceProcessor extends AbstractProcessor {
+public final class FontProcessor extends AbstractProcessor {
 
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment environment) {
@@ -48,7 +48,7 @@ public final class TypefaceProcessor extends AbstractProcessor {
     }
 
     @Override public Set<String> getSupportedAnnotationTypes() {
-        return Sets.newHashSet(Typeface.class.getName());
+        return Sets.newHashSet(Font.class.getName());
     }
 
     private void write(Map<EnclosingClass, Collection<AnnotatedField>> fieldsByEnclosingClass) {

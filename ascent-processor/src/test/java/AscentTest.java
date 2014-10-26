@@ -1,10 +1,8 @@
-import android.view.View;
-
 import com.google.common.base.Joiner;
 import com.google.testing.compile.JavaFileObjects;
 
 import net.jamesbaca.ascent.Ascent;
-import net.jamesbaca.ascent.internal.TypefaceProcessor;
+import net.jamesbaca.ascent.internal.FontProcessor;
 
 import org.junit.Test;
 
@@ -24,10 +22,10 @@ public class AscentTest {
     @Test public void fieldsMustNotBePrivate() {
         JavaFileObject source = JavaFileObjects.forSourceString("test.Test", Joiner.on('\n').join(
                 "package test;",
-                "import net.jamesbaca.typeface.InjectTypeface;",
+                "import net.jamesbaca.typeface.InjectAscent;",
                 "import android.widget.TextView;",
                 "public class Test {",
-                "  @InjectTypeface(\"42\") private TextView thing;",
+                "  @Font(\"42\") private TextView thing;",
                 "}"
         ));
 
@@ -40,7 +38,7 @@ public class AscentTest {
                 "package test;",
                 "import net.jamesbaca.typeface.InjectTypeface;",
                 "public class Test {",
-                "  @InjectTypeface(\"42\") int thing;",
+                "  @Font(\"42\") int thing;",
                 "}"
         ));
 
@@ -51,16 +49,16 @@ public class AscentTest {
     @Test public void shouldSubclass() {
         JavaFileObject source = JavaFileObjects.forSourceString("test.Test", Joiner.on('\n').join(
                 "package test;",
-                "import net.jamesbaca.ascent.Typeface;",
+                "import net.jamesbaca.ascent.Font;",
                 "import net.jamesbaca.ascent.internal.AnnotationsConverter;",
                 "import android.widget.TextView;",
                 "",
                 "public class Test {",
-                "  @Typeface(\"one\") TextView one;",
+                "  @Font(\"one\") TextView one;",
                 "}",
                 "",
                 "class Test2 extends Test{",
-                "  @Typeface(\"two\") TextView two;",
+                "  @Font(\"two\") TextView two;",
                 "}"
         ));
 
@@ -79,7 +77,7 @@ public class AscentTest {
     }
 
     private Iterable<? extends Processor> typefaceProcessors() {
-        return Arrays.asList(new TypefaceProcessor());
+        return Arrays.asList(new FontProcessor());
     }
 
 }
