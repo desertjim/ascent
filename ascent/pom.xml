@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.jamesbaca.ascent</groupId>
     <artifactId>ascent</artifactId>
-    <version>0.2.0</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
     <name>ascent</name>
     <description>Set typeface on Android TextView objects</description>
