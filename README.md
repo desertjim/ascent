@@ -14,13 +14,13 @@ Examples
 ```java
 
 // Ascent can be used to pull out fonts by name from assets/fonts folder
-// 1) Add the @Typeface annotation and font key to the TextView, Button etc member variable
+// 1) Add the @Font annotation and font key to the TextView, Button etc member variable
 // 2) Create an instance of the Ascent class
 // 3) inject the the class containing annotations
 
 class DemoActivity extends Activity {
 
-  @Typeface("Lobster.ttf") TextView mHelloWorld;
+  @Font("Lobster.ttf") TextView mHelloWorld;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +29,9 @@ class DemoActivity extends Activity {
         
     mHelloWorld = (TextView)findViewById(R.id.hello_world);
         
-    Ascent lAscent = new Ascent();
-    lAscent.setAssetManager(getAssets());
-    lAscent.inject(this);
+    Ascent ascent = new Ascent();
+    ascent.setAssetManager(getAssets());
+    ascent.inject(this);
   }
 
 }
@@ -45,7 +45,7 @@ Another slightly different example
 
 class CustomView extends View {
   
-  @Typeface("new_key") TextView mHelloWorld;
+  @Font("new_key") TextView mHelloWorld;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +54,11 @@ class CustomView extends View {
         
     mHelloWorld = (TextView)findViewById(R.id.hello_world);
     
-    Typeface lAcquiredTypeface = ... ; // Retreived from wherever
+    Typeface acquiredTypeface = ... ; // Retreived from wherever
     
-    Ascent lAscent = new Ascent();
-    lAscent.add("new_key", lAcquiredTypeface);
-    lAscent.inject(this);
+    Ascent ascent = new Ascent();
+    ascent.add("new_key", acquiredTypeface);
+    ascent.inject(this);
   }
 
 }
