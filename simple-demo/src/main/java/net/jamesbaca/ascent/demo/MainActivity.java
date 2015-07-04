@@ -19,9 +19,9 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mHelloWorld = (TextView)findViewById(R.id.hello_world);
-        Ascent lAscent = new Ascent();
-        lAscent.setAssetManager(getAssets());
-        lAscent.inject(this);
+        Ascent ascent = new Ascent();
+        ascent.setAssetManager(getAssets());
+        ascent.inject(this);
     }
 
 
