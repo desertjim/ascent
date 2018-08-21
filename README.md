@@ -16,7 +16,7 @@ Examples
 // Ascent can be used to pull out fonts by name from assets/fonts folder
 // 1) Add the @Font annotation and font key to the TextView, Button etc member variable
 // 2) Create an instance of the Ascent class
-// 3) inject the the class containing annotations
+// 3) inject the class containing annotations
 
 class DemoActivity extends Activity {
 
